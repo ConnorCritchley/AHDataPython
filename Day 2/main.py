@@ -1,10 +1,11 @@
-  # Connor Critchley Lab 2
+# Connor Critchley Lab 2
 
 name = input("What's your name?")  # username input
 num = int(input("Enter a number between 1-100"))  # get num from user
 Lflag = True  # loop flag for validation loop
 flag = True  # main loop flag
 
+# main loop
 while flag:
     # input validation loop
     while Lflag:
