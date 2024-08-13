@@ -28,3 +28,4 @@ def convert_temp(temp_c, target_unit):
 
 convert_temp(30, 'F')
 convert_temp(26, 'K')
+convert_temp(int(input("Temp: ")), input("Unit: "))
