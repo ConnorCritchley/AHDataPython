@@ -5,8 +5,8 @@ import math
 
 # Valid class checks for valid input
 class Validator:
-    def __init__(self, data):  # init sets data to passed in data
-        self.data = data
+    def __init__(self):  # init sets data to passed in data
+        self.data = None
 
     # Data method checks if data can be cast to float
     def valid(self):
@@ -14,6 +14,8 @@ class Validator:
             self.data = float(self.data)
         except ValueError:
             print("Invalid input")
+        except TypeError:
+            return False
         return type(self.data) is float
 
     # Gets the data, ideally after casting to float
@@ -45,8 +47,8 @@ class Circle:
         return self.radius
 
 
-valid = Validator(input("Enter a radius\n"))  # Create Validator instance with initial radius input
-while not valid.valid():  # While input not valid, get setting radius
+valid = Validator()  # Create Validator instance with initial radius input
+while not valid.valid():  # While input not valid, set radius radius
     valid.set_data(input("Enter a radius\n"))
 circ = Circle(valid.get_data())  # Once validated, create Circle instance with cast radius
 
