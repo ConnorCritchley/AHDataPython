@@ -22,7 +22,7 @@ facts = [
     Fact(id=8, fact="There is a dreamcast mouse and keyboard periphial."),
     Fact(id=9, fact="In an era before HDTVs, a VGA/Composite adaptor was made that allowed it to display in a blinding 480p, and link to PC monitors."),
     Fact(id=10, fact="The last offical game released for dreamcast was in 2007."),
-    Fact(id=11, fact="Since the dreamcast can run burned disks, lots of people are making homebrew games for the console still."),
+    Fact(id=11, fact="Since the dreamcast can run burned disks, lots of people are making homebrew games for the console still.")]
 
 # basic get, random or id
 @api.get("/fact")
