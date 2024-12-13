@@ -1,5 +1,5 @@
 import random
-import fastapi from FastAPI
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 api = FastAPI() # get api running
