@@ -1,8 +1,8 @@
 import random
-import fastapi from FastAPI
+from fastapi import FastAPI
 from pydantic import BaseModel
 
-api = FastAPI() # get api running
+app = FastAPI() # get api running
 
 # basic fact class
 class Fact(BaseModel):
@@ -25,8 +25,8 @@ facts = [
     Fact(id=11, fact="Since the dreamcast can run burned disks, lots of people are making homebrew games for the console still.")]
 
 # basic get, random or id
-@api.get("/fact")
-async def get_fact(i):
+@app.get("/fact")
+async def get_fact(i: str | None = None):
     if i == None: #if base, give the random
         i = random.randint(0, len(facts) - 1)
     else: # just in case strings
@@ -34,12 +34,12 @@ async def get_fact(i):
     return facts[i]
 
 # only ID endpoint
-@api.get("/fact/{id}")
+@app.get("/fact/{id}")
 async def get_id(i): # take id
     return facts[int(i)] # return fact of id, wwithout letting strings mess it up
 
 # new fact add
-@api.post("/add/")
+@app.post("/add/")
 async def add_fact(fact): # take the new fact
     new_fact = Fact(id=len(facts), fact=fact) # make the fact object
     facts.append(new_fact) # append
